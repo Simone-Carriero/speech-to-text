@@ -1,0 +1,49 @@
+.buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #f3ededf1;
+}
+
+span {
+  font-weight: 500;
+}
+
+button {
+  font-size: .8rem;
+  padding: .5rem 2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, .5);
+  cursor: pointer;
+  background-color: #4681f4;
+  color: #ffffff;
+}
+
+
+
+.green {
+  color: #04a504;
+}
+
+.red {
+  color: #ff0000;
+}
+
+@media only screen and (min-width: 600px) {
+  .buttons-container {
+    flex-direction: row;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}

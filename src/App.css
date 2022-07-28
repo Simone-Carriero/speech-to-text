@@ -4,18 +4,30 @@
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  padding: 2rem .5rem;
   height: 100vh;
-  background-color: #3f8080;
+  background-color: #001f3f;
 }
 
 h2 {
-  color: #f3eded;
+  color: #ffffff;
 }
 
+h3 {
+  font-weight: 500;
+  color: #4d8acc;
+  margin-top: .8rem;
+}
+
+
 .container__content {
+  padding: 1rem;
   color: #000000;
   background-color: #ffffff;
-  width: 80%;
-  height: 50%;
+  width: 85%;
+  height: 60%;
+  text-align: start;
+  overflow-y: auto;
   border-radius: 8px;
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
 }

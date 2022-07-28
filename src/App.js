@@ -3,6 +3,7 @@ import React from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 import './App.css';
+import CommandsSet from './components/commands-set.component';
 
 function App() {
   const commands = [
@@ -32,7 +33,7 @@ function App() {
     },
     {
       command: 'change background colour to *',
-      callback: (color) => {document.getElementById('container').style.backgroundColor = color}
+      callback: (color) => {document.getElementById('container').style.background = color}
     },
   ]
 
@@ -50,9 +51,7 @@ function App() {
     return null
   }
 
-  const start = () => {
-    SpeechRecognition.startListening({continuous: true, language: 'en-US' })
-}
+
 
 
   return (
@@ -60,16 +59,18 @@ function App() {
       
       
       <div className="container" id='container'>
-        <h2>PLEASE SPEAK SOMETHING TO WRITE</h2>
+        <div className="text-container">
+          <h2>Please speak something to write</h2>
+          <h3>Or give a voice command!</h3>
+        </div>
         <div id="content" className='container__content'>
           {transcript}
         </div>
-          <div>
-          <p>Microphone: {listening ? 'on' : 'off'}</p>
-          <button onClick={start}>Start</button>
-          <button onClick={SpeechRecognition.stopListening}>Stop</button>
-          <button onClick={resetTranscript}>Reset</button>
-        </div>
+        <CommandsSet
+          SpeechRecognition={SpeechRecognition}
+          listening={listening}
+          resetTranscript={resetTranscript}
+        />
       </div>
     </>
   );
