@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/voice-assistant/static/css/main.8bb6633b.css",
-    "main.js": "/voice-assistant/static/js/main.fd782a45.js",
+    "main.js": "/voice-assistant/static/js/main.3ef5b883.js",
     "service-worker.js": "/voice-assistant/service-worker.js",
     "index.html": "/voice-assistant/index.html",
     "main.8bb6633b.css.map": "/voice-assistant/static/css/main.8bb6633b.css.map",
-    "main.fd782a45.js.map": "/voice-assistant/static/js/main.fd782a45.js.map"
+    "main.3ef5b883.js.map": "/voice-assistant/static/js/main.3ef5b883.js.map"
   },
   "entrypoints": [
     "static/css/main.8bb6633b.css",
-    "static/js/main.fd782a45.js"
+    "static/js/main.3ef5b883.js"
   ]
 }
