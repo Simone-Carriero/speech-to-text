@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/voice-assistant/static/css/main.a6ccc0c0.css",
-    "main.js": "/voice-assistant/static/js/main.fd9f3041.js",
+    "main.css": "/voice-assistant/static/css/main.d59a3547.css",
+    "main.js": "/voice-assistant/static/js/main.767ae58c.js",
     "service-worker.js": "/voice-assistant/service-worker.js",
+    "static/media/US.png": "/voice-assistant/static/media/US.b07d51f6abee5d7dd94b.png",
+    "static/media/MX.png": "/voice-assistant/static/media/MX.3af411772a426fa90752.png",
     "index.html": "/voice-assistant/index.html",
-    "main.a6ccc0c0.css.map": "/voice-assistant/static/css/main.a6ccc0c0.css.map",
-    "main.fd9f3041.js.map": "/voice-assistant/static/js/main.fd9f3041.js.map"
+    "main.d59a3547.css.map": "/voice-assistant/static/css/main.d59a3547.css.map",
+    "main.767ae58c.js.map": "/voice-assistant/static/js/main.767ae58c.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6ccc0c0.css",
-    "static/js/main.fd9f3041.js"
+    "static/css/main.d59a3547.css",
+    "static/js/main.767ae58c.js"
   ]
 }
