@@ -1,10 +1,12 @@
 import React from 'react'
 import './commands-set.styles.css'
 
-const CommandsSet = ({ SpeechRecognition, listening, resetTranscript }) => {
+const CommandsSet = ({ SpeechRecognition, listening, resetTranscript, language }) => {
 
   const start = () => {
-    SpeechRecognition.startListening({ continuous: true, language: 'en-US' })
+    
+    SpeechRecognition.startListening({ continuous: true, language: language })
+    
   }
 
   return (

@@ -1,0 +1,9 @@
+.language-set-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.language-set-container img {
+    width: 3rem;
+    cursor: pointer;
+}

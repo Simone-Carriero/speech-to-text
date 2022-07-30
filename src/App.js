@@ -1,42 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
+import {commandsEN, commandsES, commandsIT} from './commands'
+import CommandsSet from './components/commands-set/commands-set.component';
+
 import './App.css';
-import CommandsSet from './components/commands-set.component';
+import LanguageSet from './components/language-set/language-set.component';
 
 function App() {
-  const commands = [
-    {
-      command: ['reset', 'clear'],
-      callback: ({ resetTranscript }) => resetTranscript()
-    },
-    {
-      command: ['open *', 'go to *'],
-      callback: (site) => { window.open(`https://${site}`)}
-    },
-    {
-      command: 'clear',
-      callback: ({ resetTranscript }) => resetTranscript()
-    },
-    {
-      command: 'increase text size',
-      callback: () => {document.getElementById('content').style.fontSize = '22px'}
-    },
-    {
-      command: 'decrease text size',
-      callback: () => {document.getElementById('content').style.fontSize = '16px'}
-    },
-    {
-      command: 'change text colour to *',
-      callback: (color) => {document.getElementById('content').style.color = color}
-    },
-    {
-      command: 'change background colour to *',
-      callback: (color) => {document.getElementById('container').style.background = color}
-    },
-  ]
 
+  const [language, setLanguage] = useState('en-US')
+  const [commands, setCommands] = useState(commandsEN)
   
   const {
     transcript,
@@ -44,11 +19,28 @@ function App() {
     listening,
     resetTranscript
   } = useSpeechRecognition({ commands })
+
+  useEffect(() => {
+    switch (language) {
+      case 'en-US':
+        setCommands(commandsEN)
+        break;
+      case 'es-MX':
+        setCommands(commandsES)
+        break;
+      case 'it-IT':
+        setCommands(commandsIT)
+        break;
+    
+      default:
+        break;
+    }
+  }, [language])
   
 
   
   if (!browserSupportsSpeechRecognition) {
-    return null
+    return <span>Browser doesn't support speech recognition.</span>;
   }
 
 
@@ -58,7 +50,8 @@ function App() {
     <>
       
       
-      <div className="container" id='container'>
+      <div className={`container ${listening ? 'color-animation' : ''}`} id='container'>
+        <LanguageSet setLanguage={setLanguage} />
         <div className="text-container">
           <h2>Please speak something to write</h2>
           <h3>Or give a voice command!</h3>
@@ -70,6 +63,7 @@ function App() {
           SpeechRecognition={SpeechRecognition}
           listening={listening}
           resetTranscript={resetTranscript}
+          language={language}
         />
       </div>
     </>
