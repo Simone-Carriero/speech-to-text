@@ -1,9 +1,10 @@
-.language-set-container {
+.language-set__wrapper {
   display: flex;
   gap: 2rem;
+  margin-top: 1rem;
 }
 
-.language-set-container img {
+.language-set__wrapper img {
     width: 3rem;
     cursor: pointer;
 }

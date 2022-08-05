@@ -10,7 +10,7 @@ import LanguageSet from './components/language-set/language-set.component';
 
 function App() {
 
-  const [language, setLanguage] = useState('en-US')
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en-US')
   const [commands, setCommands] = useState(commandsEN)
   
   const {
@@ -36,6 +36,10 @@ function App() {
         break;
     }
   }, [language])
+
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
   
 
   
@@ -51,7 +55,10 @@ function App() {
       
       
       <div className={`container ${listening ? 'color-animation' : ''}`} id='container'>
-        <LanguageSet setLanguage={setLanguage} />
+        <LanguageSet
+          language={language}
+          setLanguage={setLanguage}
+        />
         <div className="text-container">
           <h2>Please speak something to write</h2>
           <h3>Or give a voice command!</h3>
