@@ -4,6 +4,10 @@ export const commandsEN = [
     callback: ({ resetTranscript }) => resetTranscript()
   },
   {
+    command: 'reload',
+    callback: () => window.location.reload()
+  },
+  {
     command: 'increase text size',
     callback: () => document.getElementById('content').style.fontSize = '22px'
   },
